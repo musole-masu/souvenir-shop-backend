@@ -17,7 +17,7 @@ public class SouvenirShopController {
     @ResponseStatus(HttpStatus.CREATED)
     public String createNewSouvenir(@RequestBody ItemRequest itemRequest) {
         mSouvenirShopService.createNewSouvenir(itemRequest);
-        return "Souvenir Successfully created";
+        return "Souvenir Successfully created Yeah";
     }
 
 }
