@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: souvenirshop-deployment
+  labels:
+    app: souvenirshop
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: souvenirshop
+  template:
+    metadata:
+      labels:
+        app: souvenirshop
+    spec:
+      containers:
+        - name: souvenirshop
+          image: 2021199724/souvenirshop:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8085
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: souvenirshop-service
+spec:
+  selector:
+    app.kubernetes.io/name: souvenirshop
+  ports:
+    - protocol: TCP
+      port: 8085
+      targetPort: 8085
+  type: NodePort
