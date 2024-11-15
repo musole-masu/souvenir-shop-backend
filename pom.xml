@@ -11,6 +11,8 @@
 	<groupId>com.example</groupId>
 	<artifactId>SouvenirShop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
 	<name>SouvenirShop</name>
 	<description>SouvenirShop project for Spring Boot</description>
 	<url/>
